@@ -55,7 +55,7 @@ class LSTM(nn.Module):
         return predictions[-1]
 
 input_size=1
-hidden_layer_size=512
+hidden_layer_size=360
 output_size=1
 
 model = LSTM(input_size, hidden_layer_size, output_size).to(device)
@@ -66,7 +66,7 @@ optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
 print(model)
 
 # Train the model
-epochs = 300
+epochs = 200
 train_output=[]
 for i in range(epochs):
     for seq, labels in train_inout_seq:
